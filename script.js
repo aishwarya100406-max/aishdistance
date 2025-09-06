@@ -1,6 +1,6 @@
 // script.js - improved version with debounce, retries, clearer errors
 // IMPORTANT: Replace this with your real email address for Nominatim polite usage:
-const NOMINATIM_EMAIL = 'your-real-email@example.com';
+const NOMINATIM_EMAIL = 'aishwarya100406@gmail.com';
 
 // DOM elements (must match your HTML)
 const startBtn = document.getElementById('startBtn');

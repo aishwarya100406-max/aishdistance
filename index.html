@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>India Distance Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry"></script>
+</head>
+<body>
+  <!-- Cover Page -->
+  <div id="cover">
+    <div class="cover-content">
+      <h1>Discover Distances Across India</h1>
+      <p>Enter any two locations in India to find the distance between them and see them on the map.</p>
+      <button onclick="showCalculator()">Start Calculating</button>
+    </div>
+  </div>
+
+  <!-- Distance Calculator Page -->
+  <div id="calculator" style="display:none;">
+    <div class="container">
+      <h2>Distance Between Two Places in India</h2>
+
+      <div class="inputs">
+        <input type="text" id="place1" placeholder="Enter first place">
+        <input type="text" id="place2" placeholder="Enter second place">
+        <button onclick="calculateDistance()">Calculate Distance</button>
+      </div>
+
+      <p id="distance"></p>
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

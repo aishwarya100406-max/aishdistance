@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>India Distance Calculator</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=geometry"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>India Distance Calculator — OpenStreetMap</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-XQoYMqMTK8LvdlDXvXO0A9u7sA2v1p2g9t+uR0i0zUo=" crossorigin=""/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Cover Page -->
-  <div id="cover">
-    <div class="cover-content">
+  <!-- Cover / Hero -->
+  <section id="cover">
+    <div class="cover-inner">
       <h1>Discover Distances Across India</h1>
-      <p>Enter any two locations in India to find the distance between them and see them on the map.</p>
-      <button onclick="showCalculator()">Start Calculating</button>
-    </div>
-  </div>
-
-  <!-- Distance Calculator Page -->
-  <div id="calculator" style="display:none;">
-    <div class="container">
-      <h2>Distance Between Two Places in India</h2>
-
-      <div class="inputs">
-        <input type="text" id="place1" placeholder="Enter first place">
-        <input type="text" id="place2" placeholder="Enter second place">
-        <button onclick="calculateDistance()">Calculate Distance</button>
+      <p>Enter any two locations in India and see their positions on the map — no API key required.</p>
+      <div class="cover-actions">
+        <button id="startBtn">Start Calculating</button>
       </div>
-
-      <p id="distance"></p>
-      <div id="map"></div>
     </div>
-  </div>
+    <div class="cover-decor"></div>
+  </section>
 
+  <!-- Calculator -->
+  <main id="calculator" class="hidden">
+    <header class="topbar">
+      <h2>Distance Between Two Places in India</h2>
+      <div class="unit-switch">
+        <label><input type="radio" name="unit" value="km" checked> km</label>
+        <label><input type="radio" name="unit" value="mi"> miles</label>
+      </div>
+    </header>
+
+    <section class="controls">
+      <input id="place1" type="text" placeholder="Enter first place (e.g. Tambaram)" />
+      <input id="place2" type="text" placeholder="Enter second place (e.g. Kelambakkam)" />
+      <button id="calcBtn">Calculate Distance</button>
+      <button id="clearBtn" class="muted">Clear</button>
+    </section>
+
+    <section class="result-row">
+      <div id="distance" class="distance-text"></div>
+      <div id="errors" class="errors"></div>
+    </section>
+
+    <div id="map" aria-label="Map"></div>
+  </main>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-o9N1j9w+mmw5nVw9s8NQJH3s3Q5o2u3KfX2bM6b3B6w=" crossorigin=""></script>
   <script src="script.js"></script>
 </body>
 </html>
